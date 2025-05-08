@@ -4,10 +4,10 @@ import MinimalLogo from "../../assets/spider-web.jpg"; // Atualize para um logo 
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Menu = [
-  { id: 1, name: "Início", link: "/#" },
-  { id: 2, name: "Coleção", link: "/#services" },
-  { id: 3, name: "Mais vendidos", link: "/#" },
-  { id: 4, name: "Sobre nós", link: "/#" },
+  { id: 1, name: "Início", link: "/#home" }, // Link para a seção Hero
+  { id: 2, name: "Coleção", link: "/#hero" }, // Link para a seção Banner
+  { id: 3, name: "Mais vendidos", link: "/#top-products" }, // Link para a seção TopProducts
+  { id: 4, name: "Sobre nós", link: "/#banner" },
 ];
 
 const Navbar = ({ handleOrderPopup }) => {

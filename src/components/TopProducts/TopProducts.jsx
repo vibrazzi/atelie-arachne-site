@@ -12,7 +12,7 @@ const ProductsData = [
 
 const TopProducts = ({ handleOrderPopup }) => {
   return (
-    <section className="my-20 relative">
+    <section id="top-products" className="my-20 relative">
       <div className="container relative z-10 px-6 sm:px-12">
         {/* Header */}
         <div className="text-center mb-16 max-w-[600px] mx-auto">

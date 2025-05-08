@@ -40,7 +40,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden min-h-[500px] sm:min-h-[600px] flex justify-center items-center bg-black text-white mt-12 sm:mt-16">
+    <section id="hero" className="relative overflow-hidden min-h-[500px] sm:min-h-[600px] flex justify-center items-center bg-black text-white mt-12 sm:mt-16">
       <div className="container px-8 sm:px-16 pb-8 sm:pb-0">
         <Slider {...settings}>
           {ImageList.map(({ id, img, title, description }) => (

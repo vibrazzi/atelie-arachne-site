@@ -4,7 +4,10 @@ import { FaBox, FaTruck } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <section className="min-h-[600px] flex justify-center items-center py-16 sm:py-20 relative bg-black text-white">
+    <section
+      id="banner"
+      className="min-h-[600px] flex justify-center items-center py-16 sm:py-20 relative bg-black text-white"
+    >
       <div className="container relative z-10 px-8 sm:px-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 items-center">
           {/* Imagem promocional */}
