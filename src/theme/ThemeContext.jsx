@@ -7,16 +7,12 @@ export const ThemeProvider = ({ children }) => {
 
   // Atualiza a classe do documento com base no tema
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-    } else {
-      document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
-    }
+    const root = document.documentElement;
+    root.classList.toggle("dark", theme === "dark");
+    root.classList.toggle("light", theme === "light");
   }, [theme]);
 
-  // Função para alternar entre os temas
+  // Alterna entre os temas
   const toggleTheme = useCallback(() => {
     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   }, []);

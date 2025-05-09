@@ -5,16 +5,31 @@ import Img3 from "../../assets/hero/collection6.jpg";
 import { FaStar } from "react-icons/fa";
 
 const ProductsData = [
-  { id: 1, img: Img1, title: "Produto Premium", description: "Design sofisticado e qualidade superior para o seu dia a dia." },
-  { id: 2, img: Img2, title: "Produto Elegante", description: "Estilo minimalista que combina com qualquer ocasião." },
-  { id: 3, img: Img3, title: "Produto Exclusivo", description: "Detalhes únicos para destacar sua personalidade." },
+  {
+    id: 1,
+    img: Img1,
+    title: "Produto Premium",
+    description: "Design sofisticado e qualidade superior para o seu dia a dia.",
+  },
+  {
+    id: 2,
+    img: Img2,
+    title: "Produto Elegante",
+    description: "Estilo minimalista que combina com qualquer ocasião.",
+  },
+  {
+    id: 3,
+    img: Img3,
+    title: "Produto Exclusivo",
+    description: "Detalhes únicos para destacar sua personalidade.",
+  },
 ];
 
 const TopProducts = ({ handleOrderPopup }) => {
   return (
     <section id="top-products" className="my-20 relative">
       <div className="container relative z-10 px-6 sm:px-12">
-        {/* Header */}
+        {/* Cabeçalho */}
         <div className="text-center mb-16 max-w-[600px] mx-auto">
           <h1
             data-aos="fade-up"
@@ -48,7 +63,10 @@ const TopProducts = ({ handleOrderPopup }) => {
                 {/* Estrelas */}
                 <div className="flex justify-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} className="text-gray-400 group-hover:text-yellow-400 transition duration-300" />
+                    <FaStar
+                      key={i}
+                      className="text-gray-400 group-hover:text-yellow-400 transition duration-300"
+                    />
                   ))}
                 </div>
 

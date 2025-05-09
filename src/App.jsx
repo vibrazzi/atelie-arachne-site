@@ -13,10 +13,12 @@ import Popup from "./components/Popup/Popup";
 const App = () => {
   const [orderPopup, setOrderPopup] = useState(false);
 
+  // Alterna o estado do popup
   const handleOrderPopup = useCallback(() => {
     setOrderPopup((prev) => !prev);
   }, []);
 
+  // Inicializa animações AOS
   useEffect(() => {
     AOS.init({
       offset: 100,
@@ -29,15 +31,20 @@ const App = () => {
 
   return (
     <div className="bg-black text-white min-h-screen transition duration-300 ease-in-out">
+      {/* Navbar */}
       <Navbar handleOrderPopup={handleOrderPopup} />
 
+      {/* Conteúdo principal */}
       <main className="container mx-auto px-6 sm:px-8 lg:px-12 space-y-16 sm:space-y-20">
         <Hero handleOrderPopup={handleOrderPopup} />
         <TopProducts handleOrderPopup={handleOrderPopup} />
         <Banner />
       </main>
 
+      {/* Rodapé */}
       <Footer />
+
+      {/* Popup */}
       <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
     </div>
   );

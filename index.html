@@ -13,7 +13,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
 
-    <!-- Melhoria na compatibilidade -->
+    <!-- Compatibilidade com navegadores antigos -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Google Fonts -->
@@ -24,6 +24,15 @@
 
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tema escuro automático -->
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
   <body class="font-roboto bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
     <div id="root"></div>

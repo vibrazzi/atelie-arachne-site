@@ -17,15 +17,10 @@ const Popup = ({ orderPopup, setOrderPopup }) => {
       aria-modal="true"
       aria-labelledby="popup-title"
     >
-      <div
-        className="shadow-2xl bg-black text-white rounded-2xl w-[90%] max-w-[480px] p-8 relative overflow-hidden transition-transform duration-500 ease-in-out scale-95 hover:scale-100"
-      >
-        {/* Header */}
+      <div className="shadow-2xl bg-black text-white rounded-2xl w-[90%] max-w-[480px] p-8 relative overflow-hidden transition-transform duration-500 ease-in-out scale-95 hover:scale-100">
+        {/* Cabeçalho */}
         <div className="flex items-center justify-between mb-6">
-          <h1
-            id="popup-title"
-            className="text-2xl font-bold text-white"
-          >
+          <h1 id="popup-title" className="text-2xl font-bold text-white">
             Finalizar Pedido
           </h1>
           <button

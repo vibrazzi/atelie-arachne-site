@@ -4,11 +4,11 @@ import App from "./App.jsx";
 import "./index.css";
 import { ThemeProvider } from "./theme/ThemeContext";
 
-// Importação de estilos necessários para o funcionamento do carousel
+// Estilos necessários para o funcionamento do carousel
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Adicionando uma classe global para espaçamento e transições
+// Estilos globais para espaçamento e transições
 import "./styles/global.css";
 
 // Obtendo o elemento root de forma segura

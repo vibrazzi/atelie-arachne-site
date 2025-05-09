@@ -4,7 +4,7 @@ import MinimalLogo from "../../assets/spider-web.jpg"; // Atualize para um logo 
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Menu = [
-  { id: 1, name: "Início", link: "/#home" }, // Link para a seção Hero
+  { id: 1, name: "Início", link: "/home" }, // Link para a seção Hero
   { id: 2, name: "Coleção", link: "/#hero" }, // Link para a seção Banner
   { id: 3, name: "Mais vendidos", link: "/#top-products" }, // Link para a seção TopProducts
   { id: 4, name: "Sobre nós", link: "/#banner" },
@@ -25,16 +25,16 @@ const Navbar = ({ handleOrderPopup }) => {
   return (
     <nav
       className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 shadow-lg ${
-        isScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
+        isScrolled ? "bg-purple-800/80 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className="container flex justify-between items-center py-5 px-6 sm:px-12">
+      <div className="container flex justify-between items-center py-5 px-6 sm:px-12 gap-12">
         {/* Logo */}
         <a href="#" aria-label="Home">
           <img
             src={MinimalLogo}
             alt="Brand Logo"
-            className="h-12 hover:scale-110 transition-transform duration-300"
+            className="h-24 w-32 hover:scale-110 transition-transform duration-300"
           />
         </a>
 
@@ -49,7 +49,7 @@ const Navbar = ({ handleOrderPopup }) => {
 
         {/* Menu Responsivo */}
         <ul
-          className={`absolute top-16 left-0 w-full bg-black sm:bg-transparent sm:static sm:flex flex-col sm:flex-row items-center gap-8 text-lg p-6 sm:p-0 transition-all duration-500 ${
+          className={`absolute top-16 w-full bg-black sm:bg-transparent sm:static sm:flex flex-col sm:flex-row items-center gap-12 text-lg p-6 sm:p-0 transition-all duration-500 ${
             isMenuOpen
               ? "opacity-100 visible scale-100"
               : "opacity-0 invisible sm:opacity-100 sm:visible sm:scale-100"
@@ -59,7 +59,7 @@ const Navbar = ({ handleOrderPopup }) => {
             <li key={id}>
               <a
                 href={link}
-                className="relative group transition duration-300 hover:text-gray-400"
+                className="relative group transition duration-300 text-center hover:text-gray-400"
                 aria-label={name}
               >
                 {name}

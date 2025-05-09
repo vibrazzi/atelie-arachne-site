@@ -1,8 +1,12 @@
 module.exports = {
-  darkMode: "class", // Garante que o modo escuro seja ativado pela classe "dark"
-  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class", // Ativa o modo escuro com a classe "dark"
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"], // Define os arquivos que o Tailwind deve escanear
   theme: {
-    extend: {},
+    extend: {
+      // Personalizações futuras podem ser adicionadas aqui
+    },
   },
-  plugins: [],
+  plugins: [
+    // Adicione plugins do TailwindCSS aqui, se necessário
+  ],
 };
