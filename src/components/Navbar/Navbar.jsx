@@ -27,13 +27,14 @@ const Navbar = ({ handleOrderPopup }) => {
       className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 shadow-lg ${
         isScrolled ? "bg-purple-800/80 backdrop-blur-md" : "bg-transparent"
       }`}
+      aria-label="Barra de Navegação"
     >
       <div className="container flex justify-between items-center py-5 px-6 sm:px-12 gap-12">
         {/* Logo */}
-        <a href="#" aria-label="Home">
+        <a href="#" aria-label="Página Inicial">
           <img
             src={MinimalLogo}
-            alt="Brand Logo"
+            alt="Logotipo da Marca"
             className="h-24 w-32 hover:scale-110 transition-transform duration-300"
           />
         </a>
@@ -42,7 +43,7 @@ const Navbar = ({ handleOrderPopup }) => {
         <button
           className="text-2xl sm:hidden focus:outline-none transition-transform duration-300 hover:scale-110"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Alternar Menu"
+          aria-label={isMenuOpen ? "Fechar Menu" : "Abrir Menu"}
         >
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -60,7 +61,7 @@ const Navbar = ({ handleOrderPopup }) => {
               <a
                 href={link}
                 className="relative group transition duration-300 text-center hover:text-gray-400"
-                aria-label={name}
+                aria-label={`Ir para ${name}`}
               >
                 {name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
@@ -73,7 +74,7 @@ const Navbar = ({ handleOrderPopup }) => {
         <button
           onClick={handleOrderPopup}
           className="relative bg-white text-black py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hidden sm:block group"
-          aria-label="Ver mais produtos"
+          aria-label="Explorar mais produtos"
         >
           <span className="absolute inset-0 bg-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           <span className="relative z-10">Explorar</span>
