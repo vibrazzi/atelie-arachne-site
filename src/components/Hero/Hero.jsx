@@ -1,33 +1,36 @@
-import PropTypes from "prop-types";
-import Image1 from "../../assets/hero/collection.jpg";
+import React from "react";
+import Image1 from "../../assets/hero/collection3.jpg";
 import Image2 from "../../assets/hero/collection2.jpg";
-import Image3 from "../../assets/hero/collection3.jpg";
+import Image3 from "../../assets/hero/collection.jpg";
 import Slider from "react-slick";
 
 const ImageList = [
   {
     id: 1,
     img: Image1,
-    title: "Minimalismo e Exclusividade",
-    description: "Design sofisticado que transmite elegância e simplicidade.",
+    title: "Chaveirinhos Artesanais",
+    description:
+      "Descubra nossa coleção de chaveirinhos de tricô feitos à mão, perfeitos para presentear ou colecionar.",
   },
   {
     id: 2,
     img: Image2,
-    title: "Sofisticação Atemporal",
-    description: "Cada peça cuidadosamente criada para um estilo único e refinado.",
+    title: "Feitos com Amor",
+    description:
+      "Cada chaveirinho é feito com cuidado e atenção aos detalhes, trazendo um toque especial ao seu dia.",
   },
   {
     id: 3,
     img: Image3,
-    title: "Beleza Essencial",
-    description: "Minimalismo e inovação combinados para destacar sua personalidade.",
+    title: "Estilos Únicos",
+    description:
+      "Explore designs exclusivos que combinam criatividade e qualidade em cada peça.",
   },
 ];
 
-const Hero = () => {
-  const settings = {
-    dots: true,
+const Hero = ({ handleOrderPopup }) => {
+  var settings = {
+    dots: false,
     arrows: false,
     infinite: true,
     speed: 800,
@@ -36,44 +39,64 @@ const Hero = () => {
     autoplaySpeed: 4000,
     cssEase: "ease-in-out",
     pauseOnHover: false,
-    pauseOnFocus: false,
+    pauseOnFocus: true,
   };
 
   return (
-    <section
-      id="hero"
-      className="relative overflow-hidden min-h-[500px] sm:min-h-[600px] flex justify-center items-center bg-black text-white mt-12 sm:mt-16"
-    >
-      <div className="container px-8 sm:px-16 pb-8 sm:pb-0">
+    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-fundoClaro dark:bg-fundoEscuro text-light dark:text-dark duration-200">
+      {/* background pattern */}
+      <div className="h-[700px] w-[700px] bg-roxoEscuro/40 absolute -top-1/2 right-0 rounded-3xl rotate-45 -z-[8]"></div>
+      {/* hero section */}
+      <div className="container mx-auto px-4 sm:px-8">
         <Slider {...settings}>
-          {ImageList.map(({ id, img, title, description }) => (
-            <div
-              key={id}
-              className="grid grid-cols-1 sm:grid-cols-2 items-center gap-12 sm:gap-24 text-center sm:text-left"
-            >
-              {/* Imagem centralizada */}
-              <div className="flex justify-center items-center">
-                <img
-                  src={img}
-                  alt={title}
-                  className="max-w-[350px] sm:max-w-[450px] w-full object-cover rounded-lg shadow-lg transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-
-              {/* Texto centralizado */}
-              <div className="flex flex-col justify-center items-center sm:pl-8">
-                <h1 className="text-3xl sm:text-5xl font-bold tracking-wide mt-4 sm:mt-6">
-                  {title}
-                </h1>
-                <p className="text-base sm:text-lg leading-7 sm:leading-8 mt-4 opacity-90">
-                  {description}
-                </p>
+          {ImageList.map((data) => (
+            <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {/* text content section */}
+                <div className="flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10">
+                  <h1
+                    data-aos="zoom-out"
+                    data-aos-duration="500"
+                    data-aos-once="true"
+                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-light dark:text-dark"
+                  >
+                    {data.title}
+                  </h1>
+                  <p
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-delay="100"
+                    className="text-base sm:text-lg text-light dark:text-dark"
+                  >
+                    {data.description}
+                  </p>
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-delay="300"
+                  >
+                 </div>
+                </div>
+                {/* image section */}
+                <div className="order-1 sm:order-2">
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-once="true"
+                    className="relative z-10"
+                  >
+                    <img
+                      src={data.img}
+                      alt=""
+                      className="w-[250px] h-[250px] sm:h-[400px] sm:w-[400px] lg:h-[450px] lg:w-[450px] object-contain mx-auto"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-    </section>
+    </div>
   );
 };
 

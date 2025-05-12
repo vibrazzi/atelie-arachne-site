@@ -1,16 +1,13 @@
-import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-import MinimalLogo from "../../assets/spider-web.jpg"; // Atualize para um logo minimalista
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Menu = [
-  { id: 1, name: "Início", link: "/home" }, // Link para a seção Hero
-  { id: 2, name: "Coleção", link: "/#hero" }, // Link para a seção Banner
-  { id: 3, name: "Mais vendidos", link: "/#top-products" }, // Link para a seção TopProducts
-  { id: 4, name: "Sobre nós", link: "/#banner" },
+  { id: 1, name: "Início", link: "#home" },
+  { id: 2, name: "Chaveirinhos", link: "#products" },
+  { id: 3, name: "Contatos", link: "#footer" },
 ];
 
-const Navbar = ({ handleOrderPopup }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -22,71 +19,60 @@ const Navbar = ({ handleOrderPopup }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleMenuClick = (link) => {
+    setIsMenuOpen(false);
+    const section = document.querySelector(link);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      console.error(`Seção não encontrada para o link: ${link}`);
+    }
+  };
+
   return (
     <nav
-      className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 shadow-lg ${
-        isScrolled ? "bg-purple-800/80 backdrop-blur-md" : "bg-transparent"
+      className={`w-full top-0 left-0 z-50 transition-all duration-500 ${
+        isScrolled ? "bg-pretoProfundo/80 backdrop-blur-md" : "bg-pretoProfundo/40"
       }`}
       aria-label="Barra de Navegação"
     >
-      <div className="container flex justify-between items-center py-5 px-6 sm:px-12 gap-12">
+      <div className="container flex justify-between items-center py-4">
         {/* Logo */}
-        <a href="#" aria-label="Página Inicial">
-          <img
-            src={MinimalLogo}
-            alt="Logotipo da Marca"
-            className="h-24 w-32 hover:scale-110 transition-transform duration-300"
-          />
+        <a href="#home" className="text-white text-2xl font-bold">
+          {/* Logo ou Nome */}
         </a>
 
-        {/* Menu Toggle (Mobile) */}
-        <button
-          className="text-2xl sm:hidden focus:outline-none transition-transform duration-300 hover:scale-110"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Fechar Menu" : "Abrir Menu"}
-        >
-          {isMenuOpen ? <FaTimes /> : <FaBars />}
-        </button>
-
-        {/* Menu Responsivo */}
+        {/* Menu */}
         <ul
-          className={`absolute top-16 w-full bg-black sm:bg-transparent sm:static sm:flex flex-col sm:flex-row items-center gap-12 text-lg p-6 sm:p-0 transition-all duration-500 ${
-            isMenuOpen
-              ? "opacity-100 visible scale-100"
-              : "opacity-0 invisible sm:opacity-100 sm:visible sm:scale-100"
-          }`}
+          className={`fixed top-0 left-0 w-full h-full bg-pretoProfundo flex flex-col items-center justify-center gap-8 text-white text-lg transition-transform duration-300 ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } sm:static sm:flex sm:flex-row sm:translate-x-0 sm:bg-transparent sm:gap-4`}
         >
           {Menu.map(({ id, name, link }) => (
             <li key={id}>
-              <a
-                href={link}
+              <button
+                onClick={() => handleMenuClick(link)}
                 className="relative group transition duration-300 text-center hover:text-gray-400"
                 aria-label={`Ir para ${name}`}
               >
                 {name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
-              </a>
+              </button>
             </li>
           ))}
         </ul>
 
-        {/* Botão de Ação */}
+        {/* Botão de Menu Mobile */}
         <button
-          onClick={handleOrderPopup}
-          className="relative bg-white text-black py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hidden sm:block group"
-          aria-label="Explorar mais produtos"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="text-white text-2xl sm:hidden"
+          aria-label="Abrir menu"
         >
-          <span className="absolute inset-0 bg-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          <span className="relative z-10">Explorar</span>
-          <span className="absolute inset-0 border-2 border-transparent rounded-full group-hover:border-black animate-pulse"></span>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
     </nav>
   );
-};
-
-Navbar.propTypes = {
-  handleOrderPopup: PropTypes.func.isRequired,
 };
 
 export default Navbar;

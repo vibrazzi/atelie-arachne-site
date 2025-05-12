@@ -1,57 +1,42 @@
-import PropTypes from "prop-types";
-import { useState, useEffect, useCallback } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
+import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import TopProducts from "./components/TopProducts/TopProducts";
+import Products from "./components/Products/Products"; // Correção do caminho do componente
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
-import Popup from "./components/Popup/Popup";
+import BackToHome from "./components/BackToHome/BackToHome"; // Importação do novo componente
 
 const App = () => {
-  const [orderPopup, setOrderPopup] = useState(false);
-
-  // Alterna o estado do popup
-  const handleOrderPopup = useCallback(() => {
-    setOrderPopup((prev) => !prev);
-  }, []);
-
-  // Inicializa animações AOS
-  useEffect(() => {
+  React.useEffect(() => {
     AOS.init({
       offset: 100,
       duration: 800,
-      easing: "ease-in-out",
+      easing: "ease-in-sine",
       delay: 100,
-      once: true,
     });
+    AOS.refresh();
   }, []);
 
   return (
-    <div className="bg-black text-white min-h-screen transition duration-300 ease-in-out">
-      {/* Navbar */}
-      <Navbar handleOrderPopup={handleOrderPopup} />
-
-      {/* Conteúdo principal */}
-      <main className="container mx-auto px-6 sm:px-8 lg:px-12 space-y-16 sm:space-y-20">
-        <Hero handleOrderPopup={handleOrderPopup} />
-        <TopProducts handleOrderPopup={handleOrderPopup} />
+    <div className="bg-fundoClaro dark:bg-fundoEscuro text-light dark:text-dark duration-200">
+      <Navbar />
+      <div id="home" className="section-spacing">
         <Banner />
-      </main>
-
-      {/* Rodapé */}
-      <Footer />
-
-      {/* Popup */}
-      <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
+      </div>
+      <div id="products" className="section-spacing">
+        <Hero />
+      </div>
+      <div className="section-spacing">
+        <Products />
+      </div>
+      <div id="footer" className="section-spacing">
+        <Footer />
+      </div>
+      <BackToHome /> {/* Adicionado o botão de voltar ao início */}
     </div>
   );
-};
-
-App.propTypes = {
-  handleOrderPopup: PropTypes.func,
 };
 
 export default App;

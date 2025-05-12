@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Espaçamento padrão entre seções */
+.section-spacing {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}

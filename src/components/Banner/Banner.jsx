@@ -6,57 +6,45 @@ const Banner = () => {
   return (
     <section
       id="banner"
-      className="min-h-[600px] flex justify-center items-center py-16 sm:py-20 relative bg-black text-white"
+      className="min-h-[600px] flex justify-center items-center py-12 sm:py-16 relative bg-pretoProfundo text-white"
     >
-      <div className="container relative z-10 px-8 sm:px-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center">
           {/* Imagem promocional */}
           <div data-aos="zoom-in">
             <img
               src={MinimalLogo}
               alt="Identidade minimalista"
-              className="max-w-[450px] sm:max-w-[500px] w-full mx-auto shadow-lg rounded-lg border-4 border-white hover:scale-105 transition-transform duration-500"
+              className="max-w-[300px] sm:max-w-[400px] w-full mx-auto shadow-lg rounded-lg border-4 border-gray-700 hover:scale-105 transition-transform duration-500"
             />
           </div>
-
           {/* Seção de detalhes */}
-          <div className="flex flex-col justify-center gap-8 text-center sm:text-left">
+          <div className="flex flex-col justify-center gap-6 text-center sm:text-left">
             <h1
               data-aos="fade-up"
-              className="text-4xl sm:text-5xl font-extrabold tracking-wide leading-tight"
+              className="text-3xl sm:text-4xl font-extrabold tracking-wide leading-tight"
             >
-              Bem-vindo ao nosso Ateliê Arachne
+              Chaveirinhos de Tricô Artesanais
             </h1>
             <p
               data-aos="fade-up"
-              className="text-lg sm:text-xl text-gray-400 leading-8"
+              className="text-base sm:text-lg text-gray-400 leading-6"
             >
-              Produtos cuidadosamente selecionados, combinando qualidade e estilo com simplicidade.
+              Cada chaveirinho é uma obra de arte feita à mão, trazendo estilo e personalidade ao seu dia a dia.
             </p>
-
-            {/* Benefícios personalizados */}
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
               {[
-                {
-                  Icon: GrSecure,
-                  text: "Segurança e qualidade garantidas",
-                },
-                {
-                  Icon: FaBox,
-                  text: "Design funcional e elegante",
-                },
-                {
-                  Icon: FaTruck,
-                  text: "Entrega rápida e confiável",
-                },
+                { Icon: GrSecure, text: "Qualidade garantida em cada peça" },
+                { Icon: FaBox, text: "Design exclusivo e funcional" },
+                { Icon: FaTruck, text: "Entrega rápida e segura" },
               ].map(({ Icon, text }, index) => (
                 <div
                   key={index}
                   data-aos="fade-up"
-                  className="flex items-center gap-6 hover:scale-105 transition-transform duration-300"
+                  className="flex items-center gap-4 hover:scale-105 transition-transform duration-300"
                 >
-                  <Icon className="text-5xl shadow-lg p-4 rounded-full bg-white text-black" />
-                  <p className="text-lg sm:text-xl font-semibold text-gray-300">
+                  <Icon className="text-4xl shadow-lg p-3 rounded-full bg-gray-700 text-white" />
+                  <p className="text-sm sm:text-base font-semibold text-gray-300">
                     {text}
                   </p>
                 </div>
