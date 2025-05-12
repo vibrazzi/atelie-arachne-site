@@ -4,7 +4,6 @@ import Img2 from "../../assets/hero/collection5.jpg";
 import Img3 from "../../assets/hero/collection6.jpg"; 
 import Img4 from "../../assets/hero/collection2.jpg";
 import Img5 from "../../assets/hero/collection.jpg";
-import { FaStar } from "react-icons/fa6";
 import { FaSpider } from "react-icons/fa";
 
 const ProductsData = [
