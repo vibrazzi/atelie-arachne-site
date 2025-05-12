@@ -23,7 +23,7 @@ const App = () => {
     <div
       className="bg-fundoClaro text-light duration-200"
       style={{
-        backgroundImage: "url('/src/assets/website/bground-body.png')",
+        backgroundImage: "url('/bground-body.png')", // Caminho atualizado para o diretório public
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
