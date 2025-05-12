@@ -28,7 +28,7 @@ const ImageList = [
   },
 ];
 
-const Hero = ({ handleOrderPopup }) => {
+const Hero = () => {
   var settings = {
     dots: false,
     arrows: false,
@@ -43,22 +43,19 @@ const Hero = ({ handleOrderPopup }) => {
   };
 
   return (
-    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-fundoClaro dark:bg-fundoEscuro text-light dark:text-dark duration-200">
-      {/* background pattern */}
-      <div className="h-[700px] w-[700px] bg-roxoEscuro/40 absolute -top-1/2 right-0 rounded-3xl rotate-45 -z-[8]"></div>
-      {/* hero section */}
+    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] text-light duration-200">
+      <div className="h-[700px] w-[700px] absolute -top-1/2 right-0 rounded-3xl rotate-45 -z-[8]"></div>
       <div className="container mx-auto px-4 sm:px-8">
         <Slider {...settings}>
           {ImageList.map((data) => (
-            <div>
+            <div key={data.id}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* text content section */}
                 <div className="flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10">
                   <h1
                     data-aos="zoom-out"
                     data-aos-duration="500"
                     data-aos-once="true"
-                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-light dark:text-dark"
+                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-light"
                   >
                     {data.title}
                   </h1>
@@ -66,18 +63,11 @@ const Hero = ({ handleOrderPopup }) => {
                     data-aos="fade-up"
                     data-aos-duration="500"
                     data-aos-delay="100"
-                    className="text-base sm:text-lg text-light dark:text-dark"
+                    className="text-base sm:text-lg text-light"
                   >
                     {data.description}
                   </p>
-                  <div
-                    data-aos="fade-up"
-                    data-aos-duration="500"
-                    data-aos-delay="300"
-                  >
-                 </div>
                 </div>
-                {/* image section */}
                 <div className="order-1 sm:order-2">
                   <div
                     data-aos="zoom-in"

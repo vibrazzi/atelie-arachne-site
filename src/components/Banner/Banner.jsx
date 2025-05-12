@@ -6,7 +6,8 @@ const Banner = () => {
   return (
     <section
       id="banner"
-      className="min-h-[600px] flex justify-center items-center py-12 sm:py-16 relative bg-pretoProfundo text-white"
+      className="min-h-[600px] flex justify-center items-center py-12 sm:py-16 relative text-white"
+      // 
     >
       <div className="container mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center">

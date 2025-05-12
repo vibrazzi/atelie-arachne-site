@@ -3,7 +3,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-pretoProfundo text-white py-6">
+    <div className="text-white py-6">
       <div className="container flex flex-col items-center gap-4">
         <h1 className="text-lg font-bold">Entre em Contato</h1>
         <div className="flex items-center gap-6">

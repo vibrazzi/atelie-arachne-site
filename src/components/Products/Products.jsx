@@ -1,39 +1,43 @@
 import React from "react";
 import Img1 from "../../assets/hero/collection4.jpg";
 import Img2 from "../../assets/hero/collection5.jpg";
-import Img3 from "../../assets/hero/collection6.jpg"; // Corrigir duplicação de importação
+import Img3 from "../../assets/hero/collection6.jpg"; 
+import Img4 from "../../assets/hero/collection2.jpg";
+import Img5 from "../../assets/hero/collection.jpg";
 import { FaStar } from "react-icons/fa6";
+import { FaSpider } from "react-icons/fa";
 
 const ProductsData = [
   {
     id: 1,
     img: Img1,
     title: "Chaveirinho Ceva",
-    rating: 5.0,
-    color: "Amarelo",
-    aosDelay: "0",
   },
   {
     id: 2,
     img: Img2,
     title: "Chaveirinho Hamburguer",
-    rating: 4.5,
-    color: "Cinza",
-    aosDelay: "200",
   },
   {
     id: 3,
     img: Img3,
     title: "Chaveirinho Estrela",
-    rating: 4.7,
-    color: "Laranja",
-    aosDelay: "400",
+  },
+   {
+    id: 4,
+    img: Img4,
+    title: "Chaveirinho Lua e Estrela",
+  },
+   {
+    id: 5,
+    img: Img5,
+    title: "Chaveirinho Coelhinho",
   },
 ];
 
 const Products = () => {
   return (
-    <div className="mt-14 mb-12 flex justify-center items-center">
+    <div className="mt-14 mb-12">
       <div className="container">
         {/* Header section */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">
@@ -50,20 +54,22 @@ const Products = () => {
                 data-aos="fade-up"
                 data-aos-delay={data.aosDelay}
                 key={data.id}
-                className="space-y-3 text-center flex flex-col items-center justify-center" // Certificando-se de que o contêiner está centralizado
+                className="space-y-3 text-center" // Adicionado text-center para centralizar os textos
               >
-                <div className="flex justify-center items-center h-[250px] w-[250px]"> {/* Garantindo centralização */}
-                  <img
-                    src={data.img}
-                    alt=""
-                    className="h-full w-full object-contain rounded-md" // Ajustando para centralizar e manter proporção
-                  />
-                </div>
+                <img
+                  src={data.img}
+                  alt=""
+                  className="h-[220px] w-[250px] object-cover rounded-md"
+                />
                 <div>
                   <h3 className="font-semibold">{data.title}</h3>
                   <p className="text-sm text-gray-600">{data.color}</p>
                   <div className="flex justify-center items-center gap-1">
-                    <FaStar className="text-yellow-400" />
+                   <FaSpider style={{ color: "#800080" }} />
+                   <FaSpider style={{ color: "#800080" }} />
+                   <FaSpider style={{ color: "#800080" }} />
+                   <FaSpider style={{ color: "#800080" }} />
+                   <FaSpider style={{ color: "#800080" }} />
                     <span>{data.rating}</span>
                   </div>
                 </div>

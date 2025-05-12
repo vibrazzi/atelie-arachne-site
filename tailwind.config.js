@@ -1,6 +1,4 @@
-// tailwind.config.js
 module.exports = {
-  darkMode: "class", // Ativando modo Dark
   theme: {
     extend: {
       colors: {
@@ -10,15 +8,16 @@ module.exports = {
         vermelhoSangue: "#8B0000",
         cinzaMetalico: "#4B4B4B",
         azulEspectral: "#1A237E",
-        fundoClaro: "#1C1C1C", // Fundo claro para o modo Light
-        fundoEscuro: "#0A0A0A", // Fundo escuro para o modo Dark
+        fundoClaro: "#1C1C1C",
       },
       textColor: {
-        light: "#000000", // Texto preto no modo Light
-        dark: "#FFFFFF",  // Texto branco no modo Dark
+        light: "#E0E0E0",
+      },
+      backgroundImage: {
+        'navbar-bg': "url('/assets/capa-spider.avif')",
       },
     },
   },
-  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"], // Garantir que Tailwind analise os arquivos relevantes
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   plugins: [],
 };
