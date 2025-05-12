@@ -10,29 +10,24 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleMenuClick = (link) => {
     const section = document.querySelector(link);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    section?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <nav
       className={`w-full top-0 left-0 z-50 transition-all duration-500 ${
-        isScrolled
+        isScrolled ? "bg-transparent shadow-md" : ""
       }`}
       aria-label="Barra de Navegação"
     >
       <div className="container flex justify-center items-center py-6">
-        <a href="#home" className="text-white text-2xl font-bold"></a>
         <ul className="flex gap-8 text-white text-lg">
           {Menu.map(({ id, name, link }) => (
             <li key={id}>

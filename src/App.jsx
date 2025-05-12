@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Products from "./components/Products/Products";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
 import BackToHome from "./components/BackToHome/BackToHome";
 
 const App = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     AOS.init({
       offset: 100,
       duration: 800,
@@ -21,27 +21,27 @@ const App = () => {
 
   return (
     <div
-      className="bg-fundoClaro text-light duration-200"
+      className="bg-purple-800 text-light duration-200"
       style={{
-        backgroundImage: "url('/bground-body.png')", // Caminho atualizado para o diretório public
+        backgroundImage: "url('/bground-body.png')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
         backgroundBlendMode: "overlay",
       }}
     >
       <Navbar />
-      <div id="home" className="section-spacing">
+      <div id="home" className="my-16">
         <Banner />
       </div>
-      <div id="products" className="section-spacing">
+      <div id="products" className="my-16">
         <Hero />
       </div>
-      <div className="section-spacing">
+      <div className="my-16">
         <Products />
       </div>
-      <div id="footer" className="section-spacing">
+      <div id="footer">
         <Footer />
       </div>
       <BackToHome />

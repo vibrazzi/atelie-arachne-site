@@ -29,7 +29,7 @@ const BackToHome = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-vermelhoSangue text-white p-3 rounded-full shadow-lg hover:bg-azulEspectral transition duration-300"
+          className="fixed bottom-6 right-6 bg-vermelhoSangue text-white p-3 rounded-full shadow-lg hover:bg-purple-950 transition duration-300"
           aria-label="Voltar ao Início"
         >
           <FaArrowUp className="text-xl" />

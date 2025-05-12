@@ -1,11 +1,14 @@
 import React from "react";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp, FaSpider } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="text-white py-6">
-      <div className="container flex flex-col items-center gap-4">
-        <h1 className="text-lg font-bold">Entre em Contato</h1>
+    <div className="text-white py-10 "> {/* Alterado de py-6 para py-10 */}
+      <div className="container flex flex-col items-center gap-6"> {/* Alterado gap-4 para gap-6 */}
+        <h1 className="text-lg font-bold flex items-center gap-2">
+          Faça seus pedidos aqui
+          <FaSpider className="text-2xl text-purple-500" /> {/* Ícone de teia de aranha */}
+        </h1>
         <div className="flex items-center gap-6">
           {/* Link para WhatsApp */}
           <a
