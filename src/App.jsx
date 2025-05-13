@@ -23,8 +23,11 @@ const App = () => {
     <div
       className="bg-purple-800 text-light duration-200"
       style={{
-        backgroundImage: "url('/bground-body.png')",
+        backgroundImage: "url('/backg-roxo.png')",
         backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        backgroundPositionY: "top",
+        backgroundPositionX: "center",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundColor: "rgba(0, 0, 0, 0.7)",
