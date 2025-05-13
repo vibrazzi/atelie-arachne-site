@@ -30,7 +30,7 @@ const App = () => {
         backgroundPositionX: "center",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundColor: "rgba(0, 0, 0, 0.7)",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
         backgroundBlendMode: "overlay",
       }}
     >
