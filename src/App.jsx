@@ -23,7 +23,7 @@ const App = () => {
     <div
       className="bg-purple-800 text-light duration-200"
       style={{
-        backgroundImage: "url('/backg-roxo.png')",
+        backgroundImage: "url('/backg-roxo.png')", // Certifique-se de que a imagem está no diretório public
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundPositionY: "top",
