@@ -1,17 +1,63 @@
-<<<<<<< HEAD
-# Projeto Ateliê Arachne Site
-=======
-# React + Vite
+# Ateliê Arachne - Loja de Chaveirinhos Artesanais 🕸️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao repositório do **Ateliê Arachne**, um site desenvolvido para exibir e vender chaveirinhos de tricô feitos à mão. Este projeto foi criado com foco em design responsivo, animações suaves e uma experiência de usuário agradável.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Vite**: Ferramenta de build rápida para desenvolvimento moderno.
+- **Tailwind CSS**: Framework CSS para estilização rápida e responsiva.
+- **AOS (Animate On Scroll)**: Biblioteca para animações ao rolar a página.
+- **React Icons**: Conjunto de ícones para React.
 
-## Expanding the ESLint configuration
+## 🚀 Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# atelie-arachne-site
->>>>>>> e5c7d09 (first commit)
+- **Página Inicial**: Apresentação do ateliê com imagens e descrições.
+- **Catálogo de Produtos**: Exibição de chaveirinhos com imagens e detalhes.
+- **Navegação Suave**: Links que levam a seções específicas da página.
+- **Botão de Voltar ao Topo**: Facilita a navegação para o início da página.
+- **Links para Redes Sociais**: Conexão direta com WhatsApp e Instagram.
+
+## 📂 Estrutura do Projeto
+
+```
+src/
+├── components/       # Componentes reutilizáveis
+├── assets/           # Imagens e outros arquivos estáticos
+├── App.jsx           # Componente principal
+├── index.css         # Estilos globais
+├── main.jsx          # Ponto de entrada do React
+```
+
+## 🖥️ Como Executar o Projeto
+
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/atelie-arachne-site.git
+   cd atelie-arachne-site
+   ```
+
+2. **Instale as dependências**:
+   ```bash
+   npm install
+   ```
+
+3. **Inicie o servidor de desenvolvimento**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Acesse no navegador**:
+   O projeto estará disponível em `http://localhost:5173`.
+
+## 🌟 Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+
+---
+
+Desenvolvido com 💜 por **Webert Fernandes Souza**.
